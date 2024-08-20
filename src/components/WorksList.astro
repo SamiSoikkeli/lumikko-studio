@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+type Props = {
+	works: CollectionEntry<"works">[];
+};
+
+const { works } = Astro.props;
+---
+
+<ul class="works__list grid">
+	{
+		works.map((worksItem) => (
+			<li class="works__item" data-category={worksItem.data.category}>
+				<Image
+					src={worksItem.data.image}
+					width={1920}
+					alt={worksItem.data.name}
+					class="works__item-img"
+				/>
+				<div class="flex-between">
+					<p class="works__item-label">{worksItem.data.name}</p>
+				</div>
+			</li>
+		))
+	}
+</ul>

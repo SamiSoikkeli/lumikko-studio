@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Bundle from "./Bundle.astro";
+
+type Props = {
+	bundles: CollectionEntry<"bundles">[];
+};
+
+const { bundles } = Astro.props;
+---
+
+<section class="services__service-list">
+	<div
+		class="services__service-list-heading grid font-m hide-mobile-grid gutter"
+	>
+		<p>Nimi</p>
+		<span class="hide-mobile">&nbsp;</span>
+		<p>Aikajana</p>
+		<p>Hinta <sup class="sup-s">(*)</sup></p>
+		<p>Sisältää</p>
+	</div>
+	<div class="services__list">
+		{bundles.map((bundle) => <Bundle bundle={bundle} />)}
+	</div>
+</section>

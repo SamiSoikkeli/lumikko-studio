@@ -1,0 +1,348 @@
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const circleArea = document.querySelector(".circles__container");
+		let circles = [...document.querySelectorAll(".circle")];
+		circles.shift();
+
+		let positions = {
+			circleOne: { x: 0, y: 0 },
+			circleTwo: { x: 0, y: 0 },
+			circleThree: { x: 0, y: 0 },
+		};
+
+		let offPositionsDesktop = {
+			circleOne: { x: -119.6, y: 58.8 },
+			circleTwo: { x: 119.6, y: 58.8 },
+			circleThree: { x: 0, y: -58.8 },
+		};
+
+		let offPositionsMobile = {
+			circleOne: { x: -60, y: 58.8 },
+			circleTwo: { x: 60, y: 58.8 },
+			circleThree: { x: 0, y: -58.8 },
+		};
+
+		let width = window.innerWidth;
+		let height = window.innerHeight;
+
+		let x = 0;
+		let y = 0;
+		let isAnimationEnabled = true;
+		let isMobile = window.innerWidth <= 768;
+
+		function lerp(start: number, end: number, t: number): number {
+			return start * (1 - t) + end * t;
+		}
+
+		function setCirclePositions() {
+			let offPositions = isMobile ? offPositionsMobile : offPositionsDesktop;
+			(circles[0] as HTMLElement).style.transform =
+				`translate(-50%, -50%) translate3d(${offPositions.circleOne.x}px, ${offPositions.circleOne.y}px, 0)`;
+			(circles[1] as HTMLElement).style.transform =
+				`translate(-50%, -50%) translate3d(${offPositions.circleTwo.x}px, ${offPositions.circleTwo.y}px, 0)`;
+			(circles[2] as HTMLElement).style.transform =
+				`translate(-50%, -50%) translate3d(${offPositions.circleThree.x}px, ${offPositions.circleThree.y}px, 0)`;
+		}
+
+		function checkScreenSize() {
+			isMobile = window.innerWidth <= 768;
+			if (isMobile) {
+				isAnimationEnabled = false;
+				disableButton.classList.add("active");
+				enableButton.classList.remove("active");
+				setCirclePositions();
+			} else {
+				isAnimationEnabled = true;
+				enableButton.classList.add("active");
+				disableButton.classList.remove("active");
+			}
+		}
+
+		circleArea?.addEventListener("mousemove", (event) => {
+			if (isAnimationEnabled) {
+				const e = event as MouseEvent;
+				x = e.clientX;
+				y = e.clientY;
+			}
+		});
+
+		const enableButton = document.getElementById(
+			"js-enable-animation"
+		) as HTMLElement;
+		const disableButton = document.getElementById(
+			"js-disable-animation"
+		) as HTMLElement;
+
+		enableButton.addEventListener("click", () => {
+			isAnimationEnabled = true;
+			enableButton.classList.add("active");
+			disableButton.classList.remove("active");
+		});
+
+		disableButton.addEventListener("click", () => {
+			isAnimationEnabled = false;
+			disableButton.classList.add("active");
+			enableButton.classList.remove("active");
+			setCirclePositions();
+		});
+
+		function animate() {
+			if (isAnimationEnabled) {
+				positions.circleOne.x = lerp(
+					positions.circleOne.x,
+					(x - width / 2) * 0.2,
+					0.1
+				);
+				positions.circleOne.y = lerp(
+					positions.circleOne.y,
+					(y - height / 2) * 0.2,
+					0.1
+				);
+				positions.circleTwo.x = lerp(
+					positions.circleTwo.x,
+					(-x + width / 2) * 0.2,
+					0.1
+				);
+				positions.circleTwo.y = lerp(
+					positions.circleTwo.y,
+					(y - height / 2) * 0.2,
+					0.1
+				);
+				positions.circleThree.y = lerp(
+					positions.circleThree.y,
+					(-y + height / 2) * 0.2,
+					0.1
+				);
+
+				(circles[0] as HTMLElement).style.transform =
+					`translate(-50%, -50%) translate3d(${positions.circleOne.x}px, ${positions.circleOne.y}px, 0)`;
+				(circles[1] as HTMLElement).style.transform =
+					`translate(-50%, -50%) translate3d(${positions.circleTwo.x}px, ${positions.circleTwo.y}px, 0)`;
+				(circles[2] as HTMLElement).style.transform =
+					`translate(-50%, -50%) translate3d(${positions.circleThree.x}px, ${positions.circleThree.y}px, 0)`;
+			}
+
+			requestAnimationFrame(animate);
+		}
+
+		checkScreenSize();
+		window.addEventListener("resize", checkScreenSize);
+
+		animate();
+	});
+</script>
+
+<div class="circles pt">
+	<div class="circles__info gutter">
+		<div class="grid">
+			<span class="hide-mobile">&nbsp;</span>
+			<p class="hide-mobile">Animaatio:</p>
+			<p class="circles__description">
+				B—Brändi; <span class="font-light"
+					>Kuka sinä ja sinun yrityksesi on.</span
+				>
+			</p>
+		</div>
+		<div class="grid">
+			<span class="hide-mobile">&nbsp;</span>
+			<div class="circles__toggle hide-mobile">
+				<button id="js-enable-animation" class="circles__animation active"
+					>Päällä</button
+				>
+				<span class="font-light">/</span>
+				<button id="js-disable-animation" class="circles__animation"
+					>Pois</button
+				>
+			</div>
+			<p class="circles__description">
+				T—Tavoitteet; <span class="font-light"
+					>Yrityksesi liiketoiminnan tavoitteet.</span
+				>
+			</p>
+		</div>
+		<div class="grid">
+			<p class="circles__description">
+				A—Asiakas; <span class="font-light"
+					>Yrityksesi asiakkaiden tarpeet.</span
+				>
+			</p>
+		</div>
+		<div class="grid">
+			<p class="circles__description">
+				LS—Lumikko Studio; <span class="font-light">Meidän päämäärämme.</span>
+			</p>
+		</div>
+	</div>
+	<div class="circles__inner gutter">
+		<div class="circles__container">
+			<div class="circle circle__middle">
+				<span class="font-l">LS</span>
+			</div>
+			<div class="circle circle__one">
+				<span class="font-xl">T</span>
+			</div>
+			<div class="circle circle__two">
+				<span class="font-xl">A</span>
+			</div>
+			<div class="circle circle__three">
+				<span class="font-xl">B</span>
+			</div>
+			<div class="vertical__line"></div>
+			<div class="horizontal__line"></div>
+		</div>
+		<div class="vertical__line"></div>
+		<div class="horizontal__line"></div>
+	</div>
+</div>
+
+<style>
+	.circles {
+		border-top: var(--border-secondary-light);
+		margin-top: var(--spacing-big);
+		margin-bottom: var(--spacing-big);
+		border-bottom: var(--border-secondary-light);
+	}
+
+	.circles__inner {
+		position: relative;
+		height: 80vh;
+		width: 100%;
+		border-top: var(--border-secondary-light);
+	}
+
+	.circles__info {
+		margin-bottom: var(--spacing-big);
+	}
+
+	.circles__toggle span {
+		padding: 0 var(--spacing-half);
+		color: var(--color-grey);
+	}
+
+	.circles__animation {
+		cursor: pointer;
+		color: var(--color-grey);
+	}
+
+	.circles__animation:hover {
+		text-decoration: underline;
+	}
+
+	.circles__animation.active {
+		color: var(--color-text);
+	}
+
+	.circles__description {
+		grid-column: 5 / 7;
+	}
+
+	.circles__container {
+		position: absolute;
+		top: 0.8rem;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+		height: calc(100% - 25px);
+		max-width: 1200px;
+		background: var(--color-background);
+	}
+
+	.vertical__line {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 1px;
+		height: 100%;
+		background: var(--color-grey);
+		z-index: -2;
+		pointer-events: none;
+	}
+
+	.horizontal__line {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background: var(--color-grey);
+		z-index: -2;
+		pointer-events: none;
+	}
+
+	.circle {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		justify-content: center;
+		position: absolute;
+		transform-origin: center;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 40vh;
+		height: 40vh;
+		border: var(--border-secondary);
+		border-radius: 50%;
+		will-change: transform;
+		padding: var(--spacing) 0;
+		z-index: 11;
+	}
+
+	.circle span {
+		color: var(--color-background);
+		mix-blend-mode: difference;
+	}
+
+	.circle__middle {
+		width: 8vh;
+		height: 8vh;
+		color: var(--color-text);
+		background: var(--color-background);
+		border: none;
+		mix-blend-mode: difference;
+		align-items: center;
+	}
+
+	.circle__one {
+		border: var(--border-w);
+		mix-blend-mode: difference;
+		align-items: end;
+	}
+
+	.circle__two {
+		border: 1px dashed var(--color-white);
+		mix-blend-mode: difference;
+		align-items: end;
+	}
+
+	.circle__three {
+		background: black;
+		border: none;
+		z-index: -1;
+	}
+
+	@media screen and (max-width: 768px) {
+		.circles__container {
+			width: 100%;
+		}
+
+		.circles__info {
+			padding-bottom: var(--spacing);
+		}
+
+		.circles__description {
+			grid-column: 1 / 7;
+		}
+
+		.circle__one,
+		.circle__two,
+		.circle__three {
+			width: 30vh;
+			height: 30vh;
+		}
+	}
+</style>

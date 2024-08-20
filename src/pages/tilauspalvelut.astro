@@ -1,0 +1,465 @@
+---
+import SubscriptionList from "../components/SubscriptionList.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import "../styles/pages/subscriptions.css";
+import PageSeo from "../components/PageSeo.astro";
+import Showcase from "../components/Showcase.astro";
+import Contact from "../components/Contact.astro";
+
+const { subscriptionPage = {} } = Astro.props;
+subscriptionPage.title = "Tilauspalvelut — Lumikko Studio";
+subscriptionPage.description =
+	"Suosituin, edullisin ja nopein nettisivujen sekä graafisen suunnittelun tilauspalvelu yrityksille ja yrittäjille. Sinun henkilökohtainen luova studio aina kätesi ulottuvilla.";
+subscriptionPage.url = "https://lumikko.studio/tilauspalvelut";
+
+const subscriptions = await getCollection("subscriptions");
+---
+
+<PageSeo slot="head" page={subscriptionPage} />
+<Layout slot="body" title={subscriptionPage.title}>
+	<Header />
+	<main>
+		<section class="subscriptions__heading gutter pt">
+			<h1 class="subscriptions__title">
+				Pk-yrityksille sekä suuryrityksille, joilla on usein tarvetta useammille
+				luoville palveluille. Ammattitaitoinen graafinen suunnittelija, UX/UI
+				suunnittelija sekä frontend-kehittäjä aina sormiesi ulottuvilla ilman
+				pitkää rekrytointiprosessia.
+			</h1>
+			<div class="subscriptions__tagline grid">
+				<span>&nbsp;</span>
+				<p>Kiinteä hinnoittelu, ei yllätyksiä</p>
+			</div>
+		</section>
+		<section class="subscriptions__info grid gutter pt">
+			<span class="hide-mobile">&nbsp;</span>
+			<h2 class="font-xl--2 mb-mobile">Tilauspalvelut</h2>
+			<span class="hide-mobile">&nbsp;</span>
+			<span class="hide-mobile">&nbsp;</span>
+			<div class="subscriptions__description">
+				<p class="subscriptions__paragraph">
+					Tilauspalvelumme on suunniteltu tarjoamaan sinulle laadukasta
+					suunnittelutyötä, jolloin voit keskittyä liiketoimintaasi ja me
+					huolehdimme luovista asioista.
+				</p>
+				<p class="subscriptions__paragraph">
+					Niin hyvät edut, että sinun ei tarvitse koskaan mennä minnekään
+					muualle, kun tarvitset laadukasta suunnittelua tai nettisivuja.
+					Oikeasti.
+				</p>
+			</div>
+		</section>
+		<section class="subscriptions__benefits">
+			<div class="subscriptions__benefit grid gutter pt">
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="font-xl mb-mobile">1</span>
+				<div class="subscriptions__description">
+					<p>Salamannopea toimitus</p>
+					<p class="subscriptions__paragraph font-light">
+						Saat valmiit luovat työsi yksi kerrallaan keskimäärin vain viidessä
+						arkipäivässä.
+					</p>
+				</div>
+			</div>
+			<div class="subscriptions__benefit grid gutter pt">
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="font-xl mb-mobile">2</span>
+				<div class="subscriptions__description">
+					<p>Huippuluokan laatu</p>
+					<p class="subscriptions__paragraph font-light">
+						Mieletön suunnittelun ja frontend koodin laatu aina käden
+						ulottuvilla, kun sitä tarvitset.
+					</p>
+				</div>
+			</div>
+			<div class="subscriptions__benefit grid gutter pt">
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="font-xl mb-mobile">3</span>
+				<div class="subscriptions__description">
+					<p>Uniikki ja kokonaan sinun</p>
+					<p class="subscriptions__paragraph font-light">
+						Jokainen pikseli on suunniteltu ja koodin pätkä on kirjoitettu
+						erityisesti sinua varten ja on 100% sinun.
+					</p>
+				</div>
+			</div>
+			<div class="subscriptions__benefit grid gutter pt">
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="font-xl mb-mobile">4</span>
+				<div class="subscriptions__description">
+					<p>Joustava ja skaalautuva</p>
+					<p class="subscriptions__paragraph font-light">
+						Skaalaa toimintaa tarpeen mukaan ja lopeta milloin tahansa, kun et
+						enää tarvitse palveluita.
+					</p>
+				</div>
+			</div>
+			<div class="subscriptions__benefit grid gutter pt">
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="font-xl mb-mobile">5</span>
+				<div class="subscriptions__description">
+					<p>Kiinteä kuukausihinta</p>
+					<p class="subscriptions__paragraph font-light">
+						Ei yllätyksiä täällä! Maksat saman kiinteän hinnan joka kuukausi.
+					</p>
+				</div>
+			</div>
+		</section>
+		<SubscriptionList subscriptions={subscriptions} />
+		<section class="subscriptions__info grid gutter pt">
+			<span class="hide-mobile">&nbsp;</span>
+			<h2 class="font-xl--2 mb-mobile">Prosessi</h2>
+			<span class="hide-mobile">&nbsp;</span>
+			<span class="hide-mobile">&nbsp;</span>
+			<div class="subscriptions__description">
+				<p class="subscriptions__paragraph">
+					Maailmanluokan suunnittelua tilauksesta, toimii aivan kuten
+					suoratoistopalvelu.
+				</p>
+			</div>
+		</section>
+		<section class="subscriptions__benefits">
+			<div class="subscriptions__benefit grid gutter pt">
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="font-xl mb-mobile">1</span>
+				<div class="subscriptions__description">
+					<p>Ilmainen informaatiopuhelu</p>
+					<p class="subscriptions__paragraph font-light">
+						Tutustu prosessiimme ja opi miten voimme auttaa yritystäsi
+						menestymään.
+					</p>
+				</div>
+			</div>
+			<div class="subscriptions__benefit grid gutter pt">
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="font-xl mb-mobile">2</span>
+				<div class="subscriptions__description">
+					<p>Tehtävien lisääminen</p>
+					<p class="subscriptions__paragraph font-light">
+						Sinulla on aina täysi hallintaoikeus suunnitteluun ja kehitykseen.
+						Lisää työtehtäviä ja toimitamme ne keskimäärin viiden arkipäivän
+						välein riippuen työn laajuudesta.
+					</p>
+				</div>
+			</div>
+			<div class="subscriptions__benefit grid gutter pt">
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="font-xl mb-mobile">3</span>
+				<div class="subscriptions__description">
+					<p>Toista ja automatisoi</p>
+					<p class="subscriptions__paragraph font-light">
+						Jatkamme töiden toimittamista tarpeesi mukaan yksi kerrallaan ja
+						ilman yllätyksiä, jolloin voit keskittyä liiketoimintasi kasvuun.
+					</p>
+				</div>
+			</div>
+		</section>
+		<section class="faq-container">
+			<div class="faq-heading-container grid gutter">
+				<span class="hide-mobile">&nbsp;</span>
+				<p class="faq-heading font-xl--2">Usein kysyttyä</p>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<p class="faq-description">
+					Etkö löytänyt vastausta kysymykseesi? Laita meille rohkeasti viestiä
+					osoitteeseen contact@lumikko.studio
+				</p>
+			</div>
+			<div class="faq-list">
+				<article class="faq-item">
+					<details class="faq-item-container">
+						<summary class="faq-item-summary grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-name">Mikä tilauspalvelu minun pitäisi valita?</p>
+							<span class="faq-toggle"></span>
+						</summary>
+						<div class="faq-item-info grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-item-info-paragraph">
+								Se riippuu ainoastaan tarpeistasi ja tavoitteistasi. Kevyt
+								paketit ovat täydellisiä, jos sinulla on jatkuvia
+								suunnittelutarpeita tai useita projekteja mitkä eivät sisällä
+								koodausta, jotka sinun on toteutettava (esimerkiksi
+								suunnittelutoimistona).
+							</p>
+							<p class="faq-item-info-paragraph">
+								Täyspalvelu paketti on kätevä, jos sinulla on toistuvien
+								suunnittelutarpeiden lisäksi myös tarpeita päivittää vanhoja tai
+								rakentaa kokonaan uusia WordPress tai Shopify nettisivuja.
+							</p>
+							<p class="faq-item-info-paragraph">
+								Freelance paketti yksinkertaisesti sopii sinulle, jos silloin
+								tällöin tarvitset kiireapua erinäisissä luovissa
+								suunnitteluprojekteissa tai nettisivujen koodaamisessa.
+								(esimerkiksi suunnittelutoimistona).
+							</p>
+							<p class="faq-item-info-paragraph">
+								Jos olet yksittäisenä palveluna ostanut Lumikko Studiolta
+								nettisivut, Ylläpito paketti pitää sisältään kyseisen nettisivun
+								ylläpidon, päivittämisen sekä pienen sisällön lisäämisen.
+							</p>
+						</div>
+					</details>
+				</article>
+				<article class="faq-item">
+					<details class="faq-item-container">
+						<summary class="faq-item-summary grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-name">
+								Miten pääsen alkuun tilauspalveluidenne kanssa?
+							</p>
+							<span class="faq-toggle"></span>
+						</summary>
+						<div class="faq-item-info grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-item-info-paragraph">
+								Aloittaminen on helppoa! Valitse vain pakettisi ja laita
+								sähköpostia osoitteeseen contact@lumikko.studio. Tämän jälkeen
+								varataan molemmille sopiva päivä informaatiopuheluun, jossa
+								tutustutaan prosessiimme ja opit miten voimme auttaa yritystäsi
+								erottumaan kilpailijoistasi.
+							</p>
+							<p class="faq-item-info-paragraph">
+								Kun olemme molemmat päättäneet, että sovimme yhteen, aloitamme
+								perehdytyksen päivän kuluessa ja olemme valmiita aloittamaan
+								ensimmäisen projektisi työstämisen jo seuraavana päivänä
+								perehdytyksestä.
+							</p>
+						</div>
+					</details>
+				</article>
+				<article class="faq-item">
+					<details class="faq-item-container">
+						<summary class="faq-item-summary grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-name">
+								Kuinka paljon työtä saan yhden kuukauden aikana?
+							</p>
+							<span class="faq-toggle"></span>
+						</summary>
+						<div class="faq-item-info grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-item-info-paragraph">
+								Toimitetun työn määrä vaihtelee työn laajuuden ja
+								monimutkaisuuden mukaan.
+							</p>
+							<p class="faq-item-info-paragraph">
+								Kevyt paketista keskimäärin voit odottaa täydellistä
+								yritysilmettä ja räätälöidyn nettisivun suunnittelua, jossa on
+								enintään 5 sivua (ei koodausta / toteutusta), tai tukullisen
+								muita graafista suunnittelu sisältäviä töitä.
+							</p>
+							<p class="faq-item-info-paragraph">
+								Täyspalvelu paketista keskimäärin voit odottaa yllä olevan Kevyt
+								paketin sisällön lisäksi myös räätälöidyn nettisivun
+								toteutuksen, jossa on enintään 5 sivua.
+							</p>
+							<p class="faq-item-info-paragraph">
+								Jos työskentelet suunnittelutoimistossa, joka haluaa ulkoistaa
+								jonkin verran nettisivujen suunnittelu ja toteutustyötä, voimme
+								toimittaa yhden WordPress tai Shopify nettisivun yhden
+								laskutusjakson aikana Täyspalvelu paketissa.
+							</p>
+							<p class="faq-item-info-paragraph">
+								Ylläpito paketti sisältää 2h/kk WordPress tai Shopify nettisivun
+								päivittämistä, ylläpitoa tai pientä sisällön lisäystä. 2h
+								jälkeen 50€/h+alv(24%)+kulut.
+							</p>
+						</div>
+					</details>
+				</article>
+				<article class="faq-item">
+					<details class="faq-item-container">
+						<summary class="faq-item-summary grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-name">
+								Työskentelen suunnittelutoimistossa. Voinko palkata sinut
+								suunnittelemaan tai koodaamaan meille?
+							</p>
+							<span class="faq-toggle"></span>
+						</summary>
+						<div class="faq-item-info grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-item-info-paragraph">
+								Ehdottomasti! Työskentelemme monenlaisten asiakkaiden kanssa,
+								myös muiden suunnittelutoimistojen kanssa.
+							</p>
+							<p class="faq-item-info-paragraph">
+								Jos haluat keskustella yksityiskohtaisesti yrityksesi
+								suunnittelutarpeista ja oppia, miten voimme tukea projektejasi,
+								ota yhteyttä sähköpostitse osoitteeseen contact@lumikko.studio
+							</p>
+						</div>
+					</details>
+				</article>
+				<article class="faq-item">
+					<details class="faq-item-container">
+						<summary class="faq-item-summary grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-name">
+								Miksi tilauspalvelu eikä kokopäiväistä työntekijää?
+							</p>
+							<span class="faq-toggle"></span>
+						</summary>
+						<div class="faq-item-info grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-item-info-paragraph">
+								Tärkeimmät syyt ovat helppous ja joustavuus. Voit lopettaa
+								tilauksen milloin tahansa, joten jokainen käytetty euro
+								käytetään vain suunnittelutyöhön.
+							</p>
+							<p class="faq-item-info-paragraph">
+								Olemme kumppaneita niin kauan kuin tarvitset meitä tukemaan
+								yrityksesi tavoitteita.
+							</p>
+						</div>
+					</details>
+				</article>
+				<article class="faq-item">
+					<details class="faq-item-container">
+						<summary class="faq-item-summary grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-name">Miltä suunnitteluprosessisi näyttää?</p>
+							<span class="faq-toggle"></span>
+						</summary>
+						<div class="faq-item-info grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-item-info-paragraph">
+								Ennen kuin syvennymme yritykseesi, pyydämme sinua ensin
+								täyttämään tutustumiskyselyn. Sen jälkeen teemme markkina- ja
+								bränditutkimuksen ja tarvittaessa pidämme lyhyen UX-työpajan,
+								jossa vielä tarkemmin käymme läpi liiketoimintasi tavoitteet,
+								odotukset ja mahdolliset ratkaisut.
+							</p>
+							<p class="faq-item-info-paragraph">
+								Vasta sen jälkeen paneudumme syvällisesti suunnittelutyöhön,
+								olipa se sitten enemmän UX:ään liittyvää tai vaatiiko se, että
+								yksinkertaisesti suunnittelemme jotain erittäin visuaalista.
+							</p>
+							<p class="faq-item-info-paragraph">
+								Joka tapauksessa meillä on selkeä tärkeysjärjestys.
+							</p>
+							<p class="faq-item-info-paragraph">
+								Arvostamme kaunista estetiikkaa, mutta tiedämme myös, että
+								tuotteesi/palvelusi käyttäjille tuomat ratkaisut ovat yhtä
+								tärkeitä (ellei jopa tärkeämpiä).
+							</p>
+						</div>
+					</details>
+				</article>
+				<article class="faq-item">
+					<details class="faq-item-container">
+						<summary class="faq-item-summary grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-name">Kuinka nopeasti saan valmiit työt?</p>
+							<span class="faq-toggle"></span>
+						</summary>
+						<div class="faq-item-info grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-item-info-paragraph">
+								Keskimäärin tilauspalveluiden kautta tehdyt suunnittelutyöt,
+								jotka ei sisällä koodausta valmistuvat 5 arkipäivän kuluessa,
+								tai nopeammin.
+							</p>
+							<p class="faq-item-info-paragraph">
+								Monimutkaisemmat ja laajemmat pyynnöt kestävät pidempään.
+								Esimerkiksi yksinkertaiset nettisivut valmistuvat 4-8 viikon
+								aikana riippuen laajuudesta ja monimutkaisuudesta.
+							</p>
+						</div>
+					</details>
+				</article>
+				<article class="faq-item">
+					<details class="faq-item-container">
+						<summary class="faq-item-summary grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-name">Kuinka voin tehdä suunnittelupyyntöjä?</p>
+							<span class="faq-toggle"></span>
+						</summary>
+						<div class="faq-item-info grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-item-info-paragraph">
+								Tarjoamme paljon joustavuutta siinä, kuinka voit tehdä
+								suunnittelupyyntöjä.
+							</p>
+							<p class="faq-item-info-paragraph">
+								Voit joko käyttää sinulle räätälöityä Trello projektinhallinta
+								sivua tai voit jättää pyyntöjä suoraan Slackissä, Teamsissä tai
+								sähköpostitse. Mikä ikinä tuntuu helpoimmalta juuri sinulle.
+							</p>
+						</div>
+					</details>
+				</article>
+				<article class="faq-item">
+					<details class="faq-item-container">
+						<summary class="faq-item-summary grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-name">Entä jos en pidä valmiista työstä?</p>
+							<span class="faq-toggle"></span>
+						</summary>
+						<div class="faq-item-info grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-item-info-paragraph">
+								Ei hätää! Jatkamme suunnittelun työstämistä ja kommunikointia,
+								kunnes olet 100% tyytyväinen.
+							</p>
+						</div>
+					</details>
+				</article>
+				<article class="faq-item">
+					<details class="faq-item-container">
+						<summary class="faq-item-summary grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-name">Voinko lopettaa tilauksen?</p>
+							<span class="faq-toggle"></span>
+						</summary>
+						<div class="faq-item-info grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-item-info-paragraph">
+								Ehdottomasti! Voit lopettaa tilauksesi milloin tahansa ja mistä
+								tahansa syystä. Lopettaaksesi tilauksen, ota yhteyttä
+								osoitteeseen contact@lumikko.studio
+							</p>
+							<p class="faq-item-info-paragraph">
+								Odotamme sinua aina, kun sinulla on uusia suunnittelutarpeita.
+							</p>
+						</div>
+					</details>
+				</article>
+			</div>
+		</section>
+		<Showcase />
+		<Contact />
+	</main>
+	<Footer />
+	<script src="../scripts/app.ts"></script>
+	<script src="../scripts/localTime.ts"></script>
+	<script src="../scripts/availability.ts"></script>
+</Layout>

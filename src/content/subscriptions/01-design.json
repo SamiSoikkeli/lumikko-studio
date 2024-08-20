@@ -1,0 +1,21 @@
+{
+	"id": 1,
+	"name": "Kevyt",
+	"price": "1000€/kk",
+	"includes": [
+		"UX/UI ja graafinen suunnittelija",
+		"20 työtuntia kuukaudessa",
+		"Ajantasaistus 2 arkipäivän välein",
+		"1 projekti käynnissä kerrallaan",
+		"Slack/Teams + Trello projektien seurantaan",
+		"Keskeytä milloin tahansa"
+	],
+	"description": [
+		"Kokenut UX/UI suunnittelija ja graafinen suunnittelija aina kätesi ulottuvilla, kun sitä tarvitset.",
+		"20 tuntia huippuluokan suunnittelutyötä kuukaudessa, joka on räätälöity juuri sinun tarpeisiisi.",
+		"Saat säännöllisesti tietoa projektien etenemisestä kahden arkipäivän välein. Tiheä yhteydenpito varmistaa, että voit antaa ajoissa palautetta ja tehdä tarvittavat muutokset projektin edetessä.",
+		"Keskittymällä yhteen suunnitteluprojektiin kerrallaan takaamme, että jokainen tehtävä saa ansaitsemansa täyden huomion ja omistautumisen.",
+		"Käytämme Slackia, Teamsia ja Trelloa saumattoman viestinnän ja tehokkaan projektinhallinnan helpottamiseksi.",
+		"(2 paikkaa jäljellä tälle kuukaudelle)"
+	]
+}

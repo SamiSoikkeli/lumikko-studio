@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import showcaseImgOne from "../assets/showcase-img-1.png";
+import showcaseImgTwo from "../assets/AA_5.png";
+import showcaseImgThree from "../assets/showcase-img-3.png";
+---
+
+<section class="showcase">
+	<div class="showcase__heading grid gutter pt">
+		<span class="hide-mobile">&nbsp;</span>
+		<p class="font-xl--2">
+			Portfolio<sup class="hide-desktop-iblock"
+				>(2023—{new Date().getFullYear()})</sup
+			>
+		</p>
+		<span class="hide-mobile">&nbsp;</span>
+		<span class="hide-mobile">&nbsp;</span>
+		<div class="hide-mobile">
+			<a class="showcase__link btn-cta" href="/portfolio"
+				>&rarr; Löydä ja katso lisää</a
+			>
+		</div>
+		<span class="hide-mobile">(2023—{new Date().getFullYear()})</span>
+	</div>
+	<div class="showcase__works grid gutter">
+		<div class="showcase__item">
+			<Image src={showcaseImgOne} alt="test alt" />
+		</div>
+		<div class="showcase__item">
+			<Image src={showcaseImgThree} alt="test alt" />
+		</div>
+		<div class="showcase__item">
+			<Image src={showcaseImgTwo} alt="test alt" />
+		</div>
+	</div>
+	<div class="hide-desktop gutter">
+		<a class="showcase__link btn-cta" href="/portfolio"
+			>&rarr; Löydä ja katso lisää</a
+		>
+	</div>
+</section>

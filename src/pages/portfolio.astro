@@ -1,0 +1,80 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/pages/home.css";
+import PageSeo from "../components/PageSeo.astro";
+import { getCollection } from "astro:content";
+import WorksList from "../components/WorksList.astro";
+import "../styles/pages/works.css";
+
+const { worksPage = {} } = Astro.props;
+worksPage.title = "Portfolio — Lumikko Studio";
+worksPage.description =
+	"Täyden palvelun luova studio Lahesta, joka on erikoistunut brändäykseen ja nettisivuihin.";
+
+const works = await getCollection("works");
+---
+
+<PageSeo slot="head" page={worksPage} />
+<Layout slot="body" title={worksPage.title}>
+	<Header />
+	<main class="portfolio">
+		<div class="works__controls grid gutter">
+			<p>Kuvakoko:</p>
+			<div class="works__buttons works__size">
+				<button
+					id="js-small"
+					class="works__btn hide-mobile-iblock active"
+					title="Näytä pienet kuvat">Pieni</button
+				>
+				<span class="works__spacer hide-mobile-iblock">/</span>
+				<button
+					id="js-medium"
+					class="works__btn"
+					title="Näytä keskikokoiset kuvat">Keskikokoinen</button
+				>
+				<span class="works__spacer">/</span>
+				<button id="js-large" class="works__btn" title="Näytä isot kuvat"
+					>Iso</button
+				>
+			</div>
+			<p>Kategoria:</p>
+			<div class="works__buttons works__category">
+				<button
+					id="js-all"
+					class="works__btn active"
+					data-category="all"
+					title="Näytä kaikki työt">Kaikki</button
+				>
+				<span class="works__spacer">/</span>
+				<button
+					id="js-logo"
+					class="works__btn"
+					data-category="logo"
+					title="Näytä logo suunnittelutyöt">Logo</button
+				>
+				<span class="works__spacer">/</span>
+				<button
+					id="js-brand"
+					class="works__btn"
+					data-category="brand"
+					title="Näytä brändäys ja yritysilme suunnittelutyöt">Brändäys</button
+				>
+				<span class="works__spacer">/</span>
+				<button
+					id="js-web"
+					class="works__btn"
+					data-category="web"
+					title="Näytä nettisivu suunnittelutyöt">Nettisivut</button
+				>
+			</div>
+		</div>
+		<section class="works__container gutter">
+			<WorksList works={works} />
+		</section>
+	</main>
+	<Footer />
+	<script src="../scripts/app.ts"></script>
+	<script src="../scripts/works.ts"></script>
+</Layout>

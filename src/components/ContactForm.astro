@@ -1,0 +1,314 @@
+---
+
+---
+
+<section class="contact__form" id="contact-form">
+	<div class="contact__form-heading">
+		<h3 class="contact__form-title">
+			Moi! <span
+				><svg
+					width="258"
+					height="258"
+					viewBox="0 0 258 258"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M185.063 162.54C172.744 183.851 152.31 196.08 129 196.08C105.69 196.08 85.2561 183.851 72.9366 162.54C72.3197 161.361 72.1824 159.989 72.5532 158.71C72.924 157.432 73.7743 156.347 74.9265 155.681C76.0788 155.015 77.4438 154.82 78.7365 155.136C80.0291 155.453 81.1495 156.257 81.8634 157.38C92.4543 175.685 109.199 185.76 129 185.76C148.802 185.76 165.546 175.685 176.137 157.38C176.459 156.763 176.903 156.218 177.442 155.778C177.981 155.337 178.603 155.01 179.271 154.816C179.939 154.622 180.64 154.565 181.331 154.649C182.022 154.733 182.689 154.956 183.291 155.304C183.894 155.653 184.419 156.119 184.837 156.676C185.254 157.233 185.555 157.868 185.721 158.544C185.886 159.22 185.913 159.923 185.8 160.609C185.687 161.296 185.437 161.953 185.063 162.54ZM258 129C258 154.514 250.434 179.455 236.26 200.669C222.085 221.882 201.938 238.417 178.366 248.18C154.795 257.944 128.857 260.499 103.833 255.521C78.8098 250.544 55.8242 238.258 37.7833 220.217C19.7423 202.176 7.45625 179.19 2.47876 154.167C-2.49874 129.143 0.0558916 103.205 9.81959 79.6338C19.5833 56.0622 36.1176 35.9151 57.3315 21.7404C78.5454 7.56572 103.486 0 129 0C163.201 0.0375596 195.991 13.6407 220.175 37.8247C244.359 62.0088 257.962 94.7986 258 129ZM247.68 129C247.68 105.527 240.72 82.5817 227.679 63.0649C214.638 43.5481 196.103 28.3366 174.417 19.354C152.731 10.3714 128.868 8.02111 105.847 12.6004C82.8251 17.1797 61.6783 28.4829 45.0806 45.0806C28.4829 61.6782 17.1798 82.825 12.6005 105.847C8.02116 128.868 10.3714 152.731 19.354 174.417C28.3366 196.103 43.5481 214.638 63.065 227.679C82.5818 240.719 105.527 247.68 129 247.68C160.465 247.646 190.632 235.131 212.882 212.882C235.131 190.632 247.646 160.465 247.68 129ZM82.56 113.52C84.6011 113.52 86.5964 112.915 88.2935 111.781C89.9906 110.647 91.3134 109.035 92.0945 107.149C92.8756 105.264 93.0799 103.189 92.6817 101.187C92.2835 99.1848 91.3007 97.3459 89.8574 95.9026C88.4141 94.4594 86.5753 93.4765 84.5734 93.0783C82.5715 92.6801 80.4965 92.8844 78.6107 93.6655C76.725 94.4466 75.1133 95.7694 73.9793 97.4665C72.8453 99.1636 72.24 101.159 72.24 103.2C72.24 105.937 73.3273 108.562 75.2627 110.497C77.1981 112.433 79.823 113.52 82.56 113.52ZM175.44 92.88C173.399 92.88 171.404 93.4852 169.707 94.6192C168.009 95.7532 166.687 97.3649 165.906 99.2507C165.124 101.136 164.92 103.211 165.318 105.213C165.717 107.215 166.699 109.054 168.143 110.497C169.586 111.941 171.425 112.923 173.427 113.322C175.429 113.72 177.504 113.516 179.389 112.734C181.275 111.953 182.887 110.631 184.021 108.933C185.155 107.236 185.76 105.241 185.76 103.2C185.76 100.463 184.673 97.838 182.737 95.9026C180.802 93.9673 178.177 92.88 175.44 92.88Z"
+						fill="black"></path>
+				</svg>
+			</span>
+		</h3>
+		<p class="contact__form-description">
+			Riippuen projektisi koosta, laskemme juuri sinulle sopivan tarjouksen.
+			Jätä tarjouspyyntö ohessa olevalla lomakkeella tai sähköpostitse
+			osoitteeseen: <a href="mailto:contact@lumikko.studio"
+				>contact@lumikko.studio</a
+			>
+		</p>
+	</div>
+	<form
+		class="contact__form-form"
+		name="contact"
+		method="POST"
+		data-netlify="true"
+		data-netlify-honeypot="bot-field"
+		action="/success/"
+	>
+		<input class="form-honeypot" name="bot-field" />
+		<p class="contact__form-item">
+			<label for="name">(NIMI)</label>
+			<input
+				id="name"
+				type="text"
+				name="name"
+				placeholder="[ Nimesi ]"
+				required
+			/>
+		</p>
+		<p class="contact__form-item">
+			<label for="company">(YRITYS)</label>
+			<input
+				id="company"
+				type="text"
+				name="company"
+				placeholder="[ Yrityksesi ]"
+				required
+			/>
+		</p>
+		<p class="contact__form-item">
+			<label for="email">(SÄHKÖPOSTI)</label>
+			<input
+				id="email"
+				type="email"
+				name="email"
+				placeholder="[ Sähköpostisi ]"
+				required
+			/>
+		</p>
+		<fieldset class="contact__form-item">
+			<legend>(OLEN KIINNOSTUNUT)</legend>
+			<p class="contact__form-item contact__form-item-checkbox">
+				<input
+					type="checkbox"
+					id="graphic-design"
+					name="interest"
+					value="graphic-design"
+				/>
+				<label for="graphic-design">Graafinen suunnittelu</label>
+			</p>
+			<p class="contact__form-item contact__form-item-checkbox">
+				<input type="checkbox" id="logo" name="interest" value="logo" />
+				<label for="logo">Logo</label>
+			</p>
+			<p class="contact__form-item contact__form-item-checkbox">
+				<input type="checkbox" id="branding" name="interest" value="branding" />
+				<label for="branding">Brändäys</label>
+			</p>
+			<p class="contact__form-item contact__form-item-checkbox">
+				<input type="checkbox" id="website" name="interest" value="website" />
+				<label for="website">Nettisivut</label>
+			</p>
+			<p class="contact__form-item contact__form-item-checkbox">
+				<input
+					type="checkbox"
+					id="ecommerce"
+					name="interest"
+					value="ecommerce"
+				/>
+				<label for="ecommerce">Nettikauppa</label>
+			</p>
+			<p class="contact__form-item contact__form-item-checkbox">
+				<input type="checkbox" id="bundle" name="interest" value="bundle" />
+				<label for="bundle">Starttipaketti</label>
+			</p>
+			<p class="contact__form-item contact__form-item-checkbox">
+				<input
+					type="checkbox"
+					id="collaboration"
+					name="interest"
+					value="collaboration"
+				/>
+				<label for="collaboration">Yhteistyö</label>
+			</p>
+		</fieldset>
+		<p class="contact__form-item">
+			<label for="message">(VIESTI)</label>
+			<textarea id="message" name="message" placeholder="[ Viestisi ]"
+			></textarea>
+		</p>
+		<div class="contact__form-cta">
+			<button type="submit" class="btn">Lähetä<span>&rarr;</span></button>
+		</div>
+	</form>
+</section>
+
+<style>
+	.form-honeypot {
+		display: none;
+	}
+
+	.contact__form {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		justify-content: space-between;
+		overflow: initial;
+		font-size: var(--font-size-base-desktop);
+		margin-top: 4rem;
+		margin-bottom: 4rem;
+	}
+
+	.contact__form-heading {
+		position: sticky;
+		top: calc(var(--header-height) + 2vh);
+		align-self: flex-start;
+		width: 25%;
+	}
+
+	.contact__form-title {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		align-items: center;
+		font-size: clamp(3rem, 7vw, 5rem);
+		letter-spacing: -0.1rem;
+		line-height: 3.5rem;
+		margin-bottom: var(--spacing-double);
+		overflow-wrap: break-word;
+	}
+
+	.contact__form-title svg {
+		width: 3rem;
+		height: auto;
+		margin-left: var(--spacing-double);
+	}
+
+	.contact__form-form {
+		width: 60%;
+	}
+
+	.contact__form-form label,
+	.contact__form-form legend {
+		font-size: 0.4rem;
+		margin-bottom: var(--spacing-double);
+	}
+
+	.contact__form-item {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		margin-bottom: var(--spacing-double);
+	}
+
+	.contact__form input {
+		font-size: clamp(2rem, 4vw, 5rem);
+		letter-spacing: -0.03rem;
+		border-bottom: var(--border-light);
+	}
+
+	.contact__form-item-checkbox {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		justify-content: space-between;
+		border-bottom: var(--border-light);
+		height: 3rem;
+		margin-bottom: 0;
+		align-items: center;
+	}
+
+	.contact__form-item-checkbox:first-of-type {
+		border-top: var(--border-light);
+	}
+
+	.contact__form-item-checkbox label {
+		font-size: clamp(1.25rem, 4vw, 5rem);
+		letter-spacing: -0.03rem;
+		margin-bottom: 0;
+	}
+
+	.contact__form input[type="checkbox"] {
+		appearance: none;
+		background-color: var(--color-background);
+		margin: 0;
+		font: inherit;
+		color: var(--color-text);
+		width: 3rem;
+		height: 100%;
+		display: grid;
+		place-content: center;
+		border-top: none;
+		border-left: var(--border-light);
+		border-bottom: none;
+		border-right: var(--border-secondary-light);
+	}
+
+	.contact__form input[type="checkbox"]::before {
+		content: "";
+		width: 2rem;
+		height: 2rem;
+		transform: scale(0);
+		transition: 120ms transform ease-in-out;
+		box-shadow: inset 4rem 1rem var(--color-text);
+		transform-origin: bottom left;
+		clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+	}
+
+	.contact__form input[type="checkbox"]:checked::before {
+		transform: scale(1);
+	}
+
+	.contact__form input[type="checkbox"]:focus {
+		border-bottom: var(--border-light);
+		outline: max(2px, 0.15em) solid var(--color-text);
+	}
+
+	.contact__form textarea {
+		resize: vertical;
+		min-height: 5rem;
+		overflow-x: hidden;
+		border-bottom: var(--border-light);
+	}
+
+	.contact__form textarea::placeholder {
+		font-size: clamp(2rem, 4vw, 5rem);
+	}
+
+	.contact__form-cta {
+		height: 10vh;
+		width: 100%;
+	}
+
+	@media screen and (max-width: 768px) {
+		.contact__form {
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			font-size: var(--font-size-base-mobile);
+		}
+
+		.contact__form-heading,
+		.contact__form-form {
+			width: 100%;
+		}
+
+		.contact__form-heading {
+			position: inherit;
+			margin-bottom: 3rem;
+		}
+
+		.contact__form-title {
+			line-height: 2rem;
+		}
+
+		.contact__form-item-checkbox label {
+			letter-spacing: -0.03rem;
+		}
+
+		.contact__form-item-checkbox {
+			height: 2rem;
+		}
+		.contact__form input[type="checkbox"] {
+			width: 2rem;
+		}
+
+		.contact__form input[type="checkbox"]::before {
+			width: 1rem;
+			height: 1rem;
+		}
+	}
+</style>

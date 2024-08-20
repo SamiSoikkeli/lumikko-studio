@@ -1,0 +1,334 @@
+---
+import ServiceList from "../components/ServiceList.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import "../styles/pages/services.css";
+import PageSeo from "../components/PageSeo.astro";
+import BundleList from "../components/BundleList.astro";
+import Showcase from "../components/Showcase.astro";
+import Contact from "../components/Contact.astro";
+
+const { servicesPage = {} } = Astro.props;
+servicesPage.title = "Yksittäiset palvelut — Lumikko Studio";
+servicesPage.description =
+	"Ammattimaista ja erottuvaa brändäystä, nettisivuja ja kaikkea siltä väliltä. Olet ainutlaatuinen, yrityksesikin pitäisi olla.";
+servicesPage.url = "https://lumikko.studio/palvelut";
+
+const services = await getCollection("services");
+const bundles = await getCollection("bundles");
+---
+
+<PageSeo slot="head" page={servicesPage} />
+<Layout slot="body" title={servicesPage.title}>
+	<Header />
+	<main>
+		<section class="services__heading gutter pt">
+			<h1 class="services__title">
+				Sinä ja yrityksesi ovat ainutlaatuisia, brändisi ja nettisivusikin
+				pitäisi olla. Tästä syystä Lumikko Studio ei käytä valmiita malleja tai
+				sapluunoita, vaan jokainen pikseli on asetettu ainoastaan sinua varten.
+				Vastustamme intohimoisesti tylsiä sekä kertakäyttöisiä brändejä ja
+				nettisivuja.
+			</h1>
+			<div class="services__tagline grid">
+				<span>&nbsp;</span>
+				<p>Kiinteät & läpinäkyvät hinnat</p>
+			</div>
+		</section>
+		<section class="services__info grid gutter pt">
+			<span class="hide-mobile">&nbsp;</span>
+			<h2 class="font-xl--2 mb-mobile">Palvelut</h2>
+			<span class="hide-mobile">&nbsp;</span>
+			<span class="hide-mobile">&nbsp;</span>
+			<div class="services__description">
+				<p class="services__paragraph">
+					Erityisesti yrittäjille ja mikroyrityksille tarkoitetuista
+					yksittäisistä palveluistamme löydät kaikki mitä tarvitset saadaksesi
+					epäreilun edun yrityksellesi alusta alkaen.
+				</p>
+			</div>
+			<div class="services__disclaimer">
+				<p class="services__disclaimer--heading">(*)</p>
+				<ul class="services__disclaimer-list">
+					<li class="services__disclaimer-item font-light">
+						Hintaan lisätään alv(+24%)
+					</li>
+				</ul>
+				<p class="services__disclaimer--heading">(**)</p>
+				<ul class="services__disclaimer-list">
+					<li class="services__disclaimer-item font-light">
+						Pääosin käytämme WordPressiä tai mukautettua
+						sisällönhallintajärjestelmää riippuen sinun tarpeistasi.
+					</li>
+				</ul>
+			</div>
+		</section>
+		<ServiceList services={services} />
+		<section class="services__info grid gutter pt">
+			<span class="hide-mobile">&nbsp;</span>
+			<h2 class="font-xl--2 mb-mobile">Starttipaketit & sprintit</h2>
+			<span class="hide-mobile">&nbsp;</span>
+			<span class="hide-mobile">&nbsp;</span>
+			<div class="services__description">
+				<p class="services__paragraph">
+					Olemme pakanneet kaikki olennaiset luovat palvelut uusille yrittäjille
+					tarkoitettuihin starttipaketteihin. Säästät rahaa ja aikaa mitä
+					yrittäjyyden alkutaipaleilla ei ole koskaan liikaa.
+				</p>
+				<p class="services__paragraph">
+					Jos sinulla on nopea aikataulu, mutta et halua tinkiä laadusta (kuten
+					ei pitäisikään), sprintit ovat juuri sinua varten.
+				</p>
+			</div>
+			<div class="services__disclaimer">
+				<p class="services__disclaimer--heading">(*)</p>
+				<ul class="services__disclaimer-list">
+					<li class="services__disclaimer-item font-light">
+						Hintaan lisätään alv(+24%)
+					</li>
+				</ul>
+			</div>
+		</section>
+		<BundleList bundles={bundles} />
+		<section class="services__info grid gutter pt">
+			<span class="hide-mobile">&nbsp;</span>
+			<h2 class="font-xl--2 mb-mobile">Prosessi</h2>
+			<span class="hide-mobile">&nbsp;</span>
+			<span class="hide-mobile">&nbsp;</span>
+			<div class="services__description">
+				<p class="services__paragraph">
+					Noudatamme systemaattista nelivaiheista prosessia, joka alkaa aina
+					ymmärtämällä yritystäsi ja tarpeitasi, jonka jälkeen autamme
+					ratkaisemaan ongelmasi vaihe vaiheelta.
+				</p>
+			</div>
+		</section>
+		<section class="process__steps">
+			<div class="process__step grid gutter pt">
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="font-xl mb-mobile">1</span>
+				<div class="process__description">
+					<p>Tutustuminen</p>
+					<p class="process__paragraph font-light">
+						Jokaisen projektin ensimmäinen vaihe alkaa tutustumalla ja
+						selvittämällä olemmeko me samalla aaltopituudella. Kysymme
+						kysymyksiä, jotta saadaan selville mahdolliset ongelmat,
+						tavoitteesi, vahvuutesi ja heikkoutesi, visiosi sekä ideasi.
+					</p>
+					<p class="process__paragraph font-light">
+						Kun olemme molemmat varmoja että ajatusmaailmamme kohtaa, lähetämme
+						sinulle kattavan ja kiinteähintaisen tarjouksen aikatauluarviolla
+						varustettuna.
+					</p>
+					<ul class="process__list font-light">
+						<li class="process__item">Tutustutaan sinuun ja yritykseesi</li>
+						<li class="process__item">Määritellään brändisi persoonallisuus</li>
+						<li class="process__item">Ymmärretään asiakkaitasi</li>
+						<li class="process__item">Katsotaan sovimmeko yhteen</li>
+					</ul>
+				</div>
+			</div>
+			<div class="process__step grid gutter pt">
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="font-xl mb-mobile">2</span>
+				<div class="process__description">
+					<p>Tutkimustyö & luova suuntaus</p>
+					<p class="process__paragraph font-light">
+						Kun meillä on vankka käsitys yrityksestäsi ja tavoitteistasi, alamme
+						tutkia erilaisia luovia suuntia rakentamalla mukautettuja
+						moodboardeja, jotka yhdistävät visuaaliset mieltymyksesi meidän
+						ideoihimme ja asiakkaitesi tarpeisiin.
+					</p>
+					<p class="process__paragraph font-light">
+						Aloitamme myös nettisivujen UX- ja käytettävyystutkimuksen sekä
+						UX-suunnittelun, joka takaa erinomaisen käyttäjäkokemuksen
+						asiakkaillesi.
+					</p>
+					<ul class="process__list font-light">
+						<li class="process__item">Toimivat brändireferenssit</li>
+						<li class="process__item">
+							Visuaalisen ilmeen ja fiiliksen ideointi
+						</li>
+						<li class="process__item">UX- ja käytettävyystutkimus</li>
+						<li class="process__item">UX-suunnittelu</li>
+					</ul>
+				</div>
+			</div>
+			<div class="process__step grid gutter pt">
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="font-xl mb-mobile">3</span>
+				<div class="process__description">
+					<p>Suunnittelu & Toteutus</p>
+					<p class="process__paragraph font-light">
+						Kun olemme molemmat tyytyväisiä sinulle räätälöityyn moodboardiin
+						sekä nettisivun käyttäjäkokemukseen. Aloitamme lopullisen
+						visuaalisen ilmeeen suunnittelun sekä nettisivujen pikselintarkan
+						rakentamisen.
+					</p>
+					<p class="process__paragraph font-light">
+						Tämän prosessin aikana esitämme kaksi tai kolme erilaista
+						visuaalista konseptia, joista valitaan yksi, jota aloitetaan
+						työstämään kohti lopullista ratkaisua. Sopivan konseptin löydyttyä
+						sinulla on kolme tarkistuskierros mahdollisuutta, jonka aikana
+						voidaan tehdä visuaalisia muutoksia.
+					</p>
+					<ul class="process__list font-light">
+						<li class="process__item">Logo, väripaletti, typografia</li>
+						<li class="process__item">
+							Visuaalinen viestintä ja brändigrafiikka
+						</li>
+						<li class="process__item">Brändikirja ja -ohjeet</li>
+						<li class="process__item">Muut luovat tuotteet</li>
+						<li class="process__item">Nettisivujen(UI) suunnittelu</li>
+						<li class="process__item">Nettisivujen toteutus</li>
+					</ul>
+				</div>
+			</div>
+			<div class="process__step grid gutter pt">
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="font-xl mb-mobile">4</span>
+				<div class="process__description">
+					<p>Lanseeraus & laadunvalvonta</p>
+					<p class="process__paragraph font-light">
+						Lopuksi varmistamme, että kaikki toimii virheettömästi ja näyttää
+						täydelliseltä.
+					</p>
+					<p class="process__paragraph font-light">
+						Nettisivujen laadunvarmistustarkastukset, kuten nopeus, linkit,
+						responsiivisuus, toimivuus eri selaimilla, CMS-muutokset jne.
+					</p>
+					<ul class="process__list font-light">
+						<li class="process__item">
+							Valmiiden luovien tuotteiden lähettäminen
+						</li>
+						<li class="process__item">Nettisivujen testaus</li>
+						<li class="process__item">Perehdytys nettisivujen käyttöön</li>
+						<li class="process__item">Nettisivujen käyttöönotto</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="faq-container">
+			<div class="faq-heading-container grid gutter">
+				<span class="hide-mobile">&nbsp;</span>
+				<p class="faq-heading font-xl--2">Usein kysyttyä</p>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<p class="faq-description">
+					Etkö löytänyt kysymykseesi vastausta? Laita meille rohkeasti viestiä
+					osoitteeseen contact@lumikko.studio
+				</p>
+			</div>
+			<div class="faq-list">
+				<article class="faq-item">
+					<details class="faq-item-container">
+						<summary class="faq-item-summary grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-name">Kuka vastaa nettisivujen sisällöistä?</p>
+							<span class="faq-toggle"></span>
+						</summary>
+						<div class="faq-item-info grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-item-info-paragraph">
+								Nettisivujen sisällöt, kuten tekstit, kuvat ja videot, kuuluvat
+								vastuullesi. Jos sinulla on jo olemassa nettisivut tai muuta
+								digitaalista markkinointimateriaalia, voimme ottaa sisällöt
+								niistä.
+							</p>
+							<p class="faq-item-info-paragraph">
+								Hoidamme sisällön asettelun ja muotoilun nettisivuillesi.
+								Lisäksi suunnittelemme ja muotoilemme tekstisisällöt
+								otsikkotasolla. Optimoimme kuvat ja videot nettisivuillesi
+								sopiviksi.
+							</p>
+							<p class="faq-item-info-paragraph">
+								Sisällöt tulee toimittaa ennen projektin alkamista, jotta
+								pysytään sovitussa aikataulussa.
+							</p>
+						</div>
+					</details>
+				</article>
+				<article class="faq-item">
+					<details class="faq-item-container">
+						<summary class="faq-item-summary grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-name">
+								Voinko itse muokata nettisivua, kun se on valmis?
+							</p>
+							<span class="faq-toggle"></span>
+						</summary>
+						<div class="faq-item-info grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-item-info-paragraph">
+								Kyllä. Käytämme yleensä WordPressiä tai mukautettua
+								sisällönhallintajärjestelmää, jonka avulla voit päivittää
+								nettisivuasi osaamatta mitään koodauskieltä.
+							</p>
+							<p class="faq-item-info-paragraph">
+								Jos kuitenkin haluat, ylläpitopakettimme sisältää myös sisällön
+								päivittämisen.
+							</p>
+						</div>
+					</details>
+				</article>
+				<article class="faq-item">
+					<details class="faq-item-container">
+						<summary class="faq-item-summary grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-name">Mitä tarkistuskierros sisältää?</p>
+							<span class="faq-toggle"></span>
+						</summary>
+						<div class="faq-item-info grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-item-info-paragraph">
+								Työprosessimme on hyvin yhteistoiminnallinen. Tarjoamme yleensä
+								2 tai 3 erilaista suuntaa visuaalisten konseptien esittämiseen
+								ja jopa 3 tarkistuskierrosta valitusta suunnasta.
+							</p>
+						</div>
+					</details>
+				</article>
+				<article class="faq-item">
+					<details class="faq-item-container">
+						<summary class="faq-item-summary grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-name">
+								Kuuluuko muut kulut, kuten domain, webhotelli yms. hintaan?
+							</p>
+							<span class="faq-toggle"></span>
+						</summary>
+						<div class="faq-item-info grid">
+							<span class="hide-mobile">&nbsp;</span>
+							<p class="faq-item-info-paragraph">
+								Domain, webhotelli, sähköposti tai muut ylimääräiset
+								palvelumaksut eivät kuulu hintaan ja ovat sinun vastuulla.
+								Tarvittaessa voidaan katsoa yhdessä sopivat palvelut ja miten ne
+								toimii juuri sinun tarpeisiin.
+							</p>
+						</div>
+					</details>
+				</article>
+			</div>
+		</section>
+		<Showcase />
+		<Contact />
+	</main>
+	<Footer />
+	<script src="../scripts/app.ts"></script>
+	<script src="../scripts/localTime.ts"></script>
+	<script src="../scripts/availability.ts"></script>
+</Layout>

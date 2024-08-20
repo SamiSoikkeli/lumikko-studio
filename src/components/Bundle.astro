@@ -1,0 +1,17 @@
+---
+import { type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+type Props = {
+	bundle: CollectionEntry<"bundles">;
+};
+
+const { bundle } = Astro.props;
+---
+
+<article class="service__item grid">
+	<p class="service__name">{bundle.data.name}</p>
+	<p class="service__time">{bundle.data.time}</p>
+	<p class="service__price">{bundle.data.price}</p>
+	<p class="service__includes">{bundle.data.includes}</p>
+</article>

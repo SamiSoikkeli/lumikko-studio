@@ -1,0 +1,15 @@
+{
+	"id": 4,
+	"name": "Ylläpito",
+	"price": "50€/kk + kulut",
+	"includes": [
+		"2h/kk (ylimääräinen työ 50€/h)",
+		"WordPress päivitys",
+		"Pieni sisällönpäivitys"
+	],
+	"description": [
+		"Ylläpitopakettimme on suunniteltu pitämään nettisivusi huippukunnossa minimaalisella vaivalla. ",
+		"Säännölliset WordPressin ja sen lisäosien päivitykset ovat tärkeitä sivustosi turvallisuuden ja toiminnallisuuden ylläpitämiseksi.",
+		"Lisäksi hoidamme pienet sisältöpäivitykset, jotta nettisivusi pysyvät ajantasaisina."
+	]
+}

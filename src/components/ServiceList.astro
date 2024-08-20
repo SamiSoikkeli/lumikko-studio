@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Service from "./Service.astro";
+
+type Props = {
+	services: CollectionEntry<"services">[];
+};
+
+const { services } = Astro.props;
+---
+
+<section class="services__service-list">
+	<div
+		class="services__service-list-heading grid font-m hide-mobile-grid gutter"
+	>
+		<p>Nimi</p>
+		<span class="hide-mobile">&nbsp;</span>
+		<p>Aikajana</p>
+		<p>Hinta <sup class="sup-s">(*)</sup></p>
+		<p>Sisältää</p>
+	</div>
+	<div class="services__list">
+		{services.map((service) => <Service service={service} />)}
+	</div>
+</section>

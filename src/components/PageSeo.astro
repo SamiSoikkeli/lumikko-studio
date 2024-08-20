@@ -1,0 +1,41 @@
+---
+const { page } = Astro.props;
+const title =
+	page.title || "Lumikko Studio — Sinun henkilökohtainen luova studio.";
+const description =
+	page.description ||
+	"Suosituin, edullisin ja nopein nettisivujen sekä graafisen suunnittelun tilauspalvelu yrityksille ja yrittäjille.";
+const keywords =
+	page.keywords || "grafinen, suunnitelu, nettisivut, kotisivut, logo";
+const image = page.image || "/assets/lumikko-studio-image.png";
+const url = page.url || "https://lumikko.studio";
+const robots = page.robots || "all";
+---
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<meta name="robots" content={robots} />
+
+	<title>{title}</title>
+
+	<meta name="title" content={title} />
+	<meta name="description" content={description} />
+	<meta name="keywords" content={keywords} />
+	<meta name="image" content={image} />
+
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:image" content={image} />
+	<meta property="og:url" content={url} />
+
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content={image} />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:url" content={url} />
+
+	<link rel="canonical" href={url} />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+</head>

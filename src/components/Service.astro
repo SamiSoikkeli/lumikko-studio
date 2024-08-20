@@ -1,0 +1,16 @@
+---
+import { type CollectionEntry } from "astro:content";
+
+type Props = {
+	service: CollectionEntry<"services">;
+};
+
+const { service } = Astro.props;
+---
+
+<article class="service__item grid">
+	<p class="service__name">{service.data.name}</p>
+	<p class="service__time">{service.data.time}</p>
+	<p class="service__price">{service.data.price}</p>
+	<p class="service__includes">{service.data.includes}</p>
+</article>

@@ -1,0 +1,23 @@
+{
+	"id": 3,
+	"name": "Freelance",
+	"price": "50€/h",
+	"includes": [
+		"Brändäys",
+		"Graafinen suunnittelu",
+		"UX/UI suunnittelu",
+		"Frontend-kehitys",
+		"HTML",
+		"CSS",
+		"JavaScript",
+		"GSAP",
+		"React",
+		"Next.js",
+		"WordPress",
+		"WooCommerce",
+		"Shopify"
+	],
+	"description": [
+		"Jos kuukausitilaus ei ole sinulle sopiva ratkaisu (mikä on ymmärrettävää), toimimme myös freelancerinä ilman tilauspaketin sitoumusta."
+	]
+}

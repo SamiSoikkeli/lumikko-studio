@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Subscription from "./Subscription.astro";
+
+type Props = {
+	subscriptions: CollectionEntry<"subscriptions">[];
+};
+
+const { subscriptions } = Astro.props;
+---
+
+<section class="subscriptions__services">
+	{
+		subscriptions.map((subscription) => (
+			<Subscription subscription={subscription} />
+		))
+	}
+</section>

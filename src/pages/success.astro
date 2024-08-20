@@ -1,0 +1,47 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import PageSeo from "../components/PageSeo.astro";
+
+const { successPage = {} } = Astro.props;
+successPage.title = "Lähetetty ✓ | Lumikko Studio";
+successPage.url = "https://lumikko.studio/success";
+successPage.robots = "noindex, nofollow";
+---
+
+<PageSeo slot="head" page={successPage} />
+<Layout slot="body" title={successPage.title}>
+	<Header />
+	<main>
+		<section class="success__heading-container main__heading-container">
+			<div class="success__heading main__heading">
+				<h1>Kiitos</h1>
+				<span>&check;</span>
+			</div>
+			<div class="success__description-container main__description-container">
+				<div class="success__description main__description">
+					<p>
+						Yhteydenottopyyntösi on lähetetty onnistuneesti. Olemme teihin
+						yhteydessä sähköpostitse kolmen(3) arkipäivän kuluessa.
+					</p>
+				</div>
+			</div>
+			<div class="success__heading-cta main__heading">
+				<a href="/">Takaisin etusivulle &crarr;</a>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	.success__heading-cta {
+		margin-top: 40vh;
+	}
+	@media screen and (max-width: 768px) {
+		.success__heading-cta {
+			margin-top: 70vh;
+		}
+	}
+</style>

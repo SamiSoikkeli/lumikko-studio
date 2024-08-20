@@ -1,0 +1,50 @@
+---
+import { type CollectionEntry } from "astro:content";
+
+type Props = {
+	subscription: CollectionEntry<"subscriptions">;
+};
+
+const { subscription } = Astro.props;
+---
+
+<article class="subscription__item grid gutter pt">
+	<div class="subscription__name font-xl--2 hide-desktop-flex flex-between pt">
+		<p>
+			{subscription.data.name}
+		</p>
+		<p>
+			{subscription.data.id}
+		</p>
+	</div>
+	<span class="hide-mobile">&nbsp;</span>
+	<p class="subscription__name font-xl--2 hide-mobile">
+		{subscription.data.name}
+	</p>
+	<span class="hide-mobile">&nbsp;</span>
+	<span class="hide-mobile">&nbsp;</span>
+	<div class="subscriptions__description">
+		{
+			subscription.data.description.map((service: string) => (
+				<p class="subscriptions__paragraph">{service}</p>
+			))
+		}
+	</div>
+	<span class="hide-mobile">&nbsp;</span>
+	<span class="spacer-line"></span>
+	<div class="subscription__includes font-m">
+		{
+			subscription.data.includes.map((service: string) => (
+				<p class="subscriptions__include">{service}</p>
+			))
+		}
+	</div>
+	<span class="spacer-line"></span>
+	<div class="subscription__cta">
+		<p class="subscription__price font-l">{subscription.data.price}</p>
+	</div>
+	<div class="subscription__disclaimer">
+		<p>Lisätietoja</p>
+		<p class="font-light">Hintaan lisätään alv(+24%)</p>
+	</div>
+</article>

@@ -1,0 +1,106 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import "../styles/pages/home.css";
+import showcaseVideo from "../content/services/assets/folio-showcase.mp4";
+import PageSeo from "../components/PageSeo.astro";
+import Footer from "../components/Footer.astro";
+
+const { homePage = {} } = Astro.props;
+homePage.title = "Lumikko Studio";
+homePage.description =
+	"Täyden palvelun luova studio Lahesta, joka on erikoistunut brändäykseen ja WordPress nettisivuihin.";
+homePage.url = "https://lumikko.studio";
+---
+
+<PageSeo slot="head" page={homePage} />
+<Layout slot="body" title={homePage.title}>
+	<Header />
+	<main class="home">
+		<section class="hero hero--min">
+			<div class="hero__showcase grid gutter">
+				<video id="js-showcase" src={showcaseVideo} autoplay muted loop></video>
+			</div>
+			<div class="grid">
+				<div class="heading gutter pt mb font-l">
+					<h1>
+						Lumikko Studio on brändäykseen ja räätälöityihin nettisivuihin
+						erikoistunut luova kumppani yrittäjille sekä yrityksille, jotka
+						arvostavat luovuuden voimaa ja haluavat erottua massasta.
+					</h1>
+					<span>&nbsp;</span>
+					<div class="hero__links">
+						<a class="font-light" href="/palvelut"
+							>&rarr; Yksittäiset palvelut</a
+						>
+						<a class="font-light" href="/tilauspalvelut"
+							>&rarr; Tilauspalvelut</a
+						>
+					</div>
+				</div>
+				<span class="hide-mobile">&nbsp;</span>
+				<div class="gutter bt pt mb">
+					<div class="services__services">
+						<p class="services__services--heading">Erikoisosaamisemme</p>
+						<ul class="services__list">
+							<li class="services__item">Brändäys</li>
+							<li class="services__item">Logo suunnittelu</li>
+							<li class="services__item">Typografia</li>
+							<li class="services__item">Nettisivut</li>
+							<li class="services__item">Nettikaupat</li>
+							<li class="services__item">UX/UI suunnittelu</li>
+							<li class="services__item">Visuaalinen identiteetti</li>
+							<li class="services__item">Visuaalien ideointi (AD)</li>
+						</ul>
+					</div>
+				</div>
+				<div class="contact__details gutter bt pt mb">
+					<div class="contact__contact">
+						<p class="contact__contact--heading">Yhteystiedot</p>
+						<ul class="contact__list">
+							<li class="contact__item">Lumikko Studio</li>
+							<li class="contact__item">Y-tunnus: 3375819-2</li>
+							<li class="contact__item">Nastola, Lahti (Finland)</li>
+						</ul>
+					</div>
+					<div class="contact__contact">
+						<ul class="contact__list">
+							<li class="contact__item"><span class="localTime"></span></li>
+							<li class="contact__item"><span class="localDate"></span></li>
+							<li class="contact__item">
+								<span id="js-availability" class="availability"
+								></span>(Tavoitettavissa ark. klo 10-15)
+							</li>
+						</ul>
+					</div>
+					<div class="contact__contact">
+						<p class="contact__contact--heading">Tarjouspyynnöt</p>
+						<ul class="contact__list">
+							<li class="contact__item">
+								<a href="mailto:contact@lumikko.studio" id="target-email"
+									>&#8599; contact@lumikko.studio</a
+								>
+							</li>
+							<li class="contact__item">
+								<button
+									type="button"
+									title="Kopioi sähköpostiosoite leikepöydälle"
+									id="copy-email"
+									class="contact__copy-email"
+									>&rarr; Kopioi sähköpostiosoite</button
+								>
+							</li>
+							<li id="js-email-success" class="contact__item contact__success">
+								<span class="">Sähköposti kopioitu leikepöydälle.</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<script src="../scripts/app.ts"></script>
+	<script src="../scripts/home.ts"></script>
+	<script src="../scripts/localTime.ts"></script>
+	<script src="../scripts/availability.ts"></script>
+</Layout>

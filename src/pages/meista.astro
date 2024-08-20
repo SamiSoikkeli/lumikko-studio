@@ -1,0 +1,212 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/pages/home.css";
+import PageSeo from "../components/PageSeo.astro";
+import Contact from "../components/Contact.astro";
+import Circles from "../components/Circles.astro";
+import { Image } from "astro:assets";
+import flagImg from "../assets/lmkstudio-flag.png";
+
+const { homePage = {} } = Astro.props;
+homePage.title = "Meistä — Lumikko Studio";
+homePage.description =
+	"Täyden palvelun luova studio Lahesta, joka on erikoistunut brändäykseen ja nettisivuihin.";
+---
+
+<PageSeo slot="head" page={homePage} />
+<Layout slot="body" title={homePage.title}>
+	<Header />
+	<main class="about">
+		<section class="about__heading gutter pt">
+			<div class="grid">
+				<div class="info__heading">
+					<h1>
+						Lumikko Studio on yhden hengen luova studio Lahesta, joka on
+						erikoistunut brändäykseen ja räätälöityjen nettisivujen luomiseen.
+					</h1>
+					<p>
+						Työskentelemme maailmanlaajuisesti yrittäjien sekä kaikenkokoisten
+						yritysten kanssa heidän matkansa kaikissa vaiheissa (silloin tällöin
+						myös freelancer roolissa).
+					</p>
+					<p>
+						Toimintamallimme perustuu suurille suunnittelutoimistoille
+						tyypilliseen vankkaan tutkimukseen ja strategiseen ajattelutapaan,
+						mutta samalla hyödymme pienen studion yksityiskohtiin kiinnittyvästä
+						huomiosta.
+					</p>
+					<p>Tehdään monimutkaisesta yksinkertaista.</p>
+				</div>
+				<div class="about__img">
+					<Image
+						src={flagImg}
+						alt="Lumikko Studio sign"
+						width="1342"
+						height="1006"
+					/>
+				</div>
+			</div>
+			<div class="hero__tagline grid">
+				<span>&nbsp;</span>
+				<p>Ajattelu- & toimintatapa</p>
+			</div>
+		</section>
+		<section class="info">
+			<div class="info__process pt">
+				<div class="grid gutter">
+					<span class="hide-mobile">&nbsp;</span>
+					<div class="info__subheading font-xl--2 mb-mobile">
+						<h3>Ymmärrä,</h3>
+						<h3>Tee &</h3>
+						<h3>Ratkaise.</h3>
+					</div>
+					<span class="hide-mobile">&nbsp;</span>
+					<span class="hide-mobile">&nbsp;</span>
+					<div class="info__description">
+						<p class="info__paragraph">
+							Tiedostamme, että design on pohjimmiltaan luovan ongelmanratkaisun
+							prosessi, ja uskomme, että tätä prosessia voidaan soveltaa mihin
+							tahansa toimialaan tai mediaan.
+						</p>
+						<p class="info__paragraph">
+							Suunnittelemme kokemuksia, jotka ovat käytännöllisiä ja samalla
+							luovia, jotta asiakkaamme voivat toteuttaa tavoitteensa
+							strategisesti.
+						</p>
+						<p class="info__paragraph">
+							Prosessimme perustuu avoimuuteen. Projektin laajuudesta
+							riippumatta teemme yhteistyötä asiakkaidemme kanssa nimenomaan
+							kumppaneina.
+						</p>
+						<p class="info__paragraph">
+							Tässä vaiheessa historiaa, jolloin lähes kaikki on generoitua
+							tietojen uudelleenkirjoitusta (AI, ML, jne.), ihmiset kaipaavat
+							jotain inhimillistä.
+						</p>
+					</div>
+					<div class="info__description">
+						<p class="info__paragraph">
+							Tulevaisuuden luomisesta historiaa uudelleen generoimalla tulee
+							nopeasti tylsää ja kertakäyttöistä.
+						</p>
+						<p class="info__paragraph">
+							Siksi tarvitsemme nyt enemmän kuin koskaan luovaa leikkikenttää
+							ilmaistaksemme ja tutkiaksemme inhimillisiä tunteita, jotka
+							kumpuavat sisältämme.
+						</p>
+						<p class="info__paragraph">
+							Brändien on asetuttava tekoälykilpailun yläpuolelle ja alettava
+							puhua oikealla äänellä, ja ihmisten on pysyttävä luovina, jotta
+							maailma olisi elämisen arvoinen.
+						</p>
+					</div>
+				</div>
+				<Circles />
+			</div>
+		</section>
+		<section class="services">
+			<div class="hero-services__title grid gutter pt">
+				<span class="hide-mobile">&nbsp;</span>
+				<h2 class="services__heading font-xl--2 mb-mobile">Palvelut</h2>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<div class="info__description">
+					<p class="info__paragraph">
+						Kilpailijoista erottuminen ei ole helppoa nykypäivänä. Vaikeutena ei
+						ole vain toimia tai näyttää erilaiselta, vaan tehdä se tavalla, joka
+						on kiinnostava ja merkityksellinen.
+					</p>
+					<p class="info__paragraph">
+						Hyvän ja loistavan ero on usein yksityiskohdissa.
+					</p>
+					<p class="info__paragraph">
+						Nämä yksityiskohdat voivat olla hienovaraisia, asioita joita
+						keskivertokuluttaja ei huomaa. Ne vaikuttavat kuitenkin osaltaan
+						kokonaisvaikutelmaan brändistä ja nettisivusta sekä määrittävät,
+						millaisen kuvan kuluttaja niistä saa.
+					</p>
+					<p class="services__paragraph">
+						Lumikko Studio ei sovi väliaikaista ja halpaa toteutusta etsiville.
+						Sellaiseen löytyy sopivampia ratkaisuja.
+					</p>
+				</div>
+			</div>
+			<div class="services__info grid gutter">
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<div class="services__services">
+					<p class="services__services--heading">
+						Erikoisosaamiseemme kuuluu mukaan lukien, mutta ei rajoittuen
+					</p>
+					<ul class="services__list">
+						<li class="services__item">Brändäys</li>
+						<li class="services__item">Logo suunnittelu</li>
+						<li class="services__item">Typografia</li>
+						<li class="services__item">Nettisivut</li>
+						<li class="services__item">Nettikaupat</li>
+						<li class="services__item">UX/UI suunnittelu</li>
+						<li class="services__item">Visuaalinen identiteetti</li>
+						<li class="services__item">Visuaalien ideointi (AD)</li>
+					</ul>
+				</div>
+			</div>
+			<div class="services__cta grid gutter">
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<p class="services__card--heading font-l">0&rarr;1</p>
+				<div class="services__card">
+					<div class="services__card--info">
+						<p>Yksittäiset palvelut</p>
+						<p class="services__card--description font-light">
+							Erityisesti yrittäjille ja mikroyrityksille tarkoitetut
+							läpinäkyvät ja kiinteähintaiset luovat palvelut.
+						</p>
+						<p class="services__card--description font-light">
+							Olemme myös pakanneet olennaiset luovat palvelut uusille
+							yrittäjille tarkoitettuihin starttipaketteihin. Säästät rahaa ja
+							aikaa mitä yrittäjyyden ja yrityksen alkutaipaleilla ei ole
+							koskaan liikaa.
+						</p>
+					</div>
+					<a href="/palvelut" class="btn-cta"
+						>&rarr; Lue lisää yksittäisistä palveluista</a
+					>
+				</div>
+			</div>
+			<div class="services__cta grid gutter">
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<span class="hide-mobile">&nbsp;</span>
+				<p class="services__card--heading font-l">1&rarr;2+</p>
+				<div class="services__card">
+					<div class="services__card--info">
+						<p>Tilauspalvelut (+freelance)</p>
+						<p class="services__card--description font-light">
+							Pk-yrityksille sekä suuryrityksille, joilla on usein tarvetta
+							useammille luoville palveluille.
+						</p>
+						<p class="services__card--description font-light">
+							Ammattitaitoinen graafinen suunnittelija, UX/UI suunnittelija sekä
+							frontend-kehittäjä aina sormiesi ulottuvilla, kun tarvitset.
+						</p>
+					</div>
+					<a href="/tilauspalvelut" class="btn-cta"
+						>&rarr; Lue lisää tilauspalveluista</a
+					>
+				</div>
+			</div>
+		</section>
+		<Contact />
+	</main>
+</Layout>
+<script src="../scripts/app.ts"></script>
+<script src="../scripts/localTime.ts"></script>
+<script src="../scripts/availability.ts"></script>
+<Footer />

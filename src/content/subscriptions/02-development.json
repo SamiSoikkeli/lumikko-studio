@@ -1,0 +1,22 @@
+{
+	"id": 2,
+	"name": "Täyspalvelu",
+	"price": "2500€/kk",
+	"includes": [
+		"UX/UI ja graafinen suunnittelija",
+		"WordPress/Frontend-kehittäjä",
+		"50 työtuntia kuukaudessa",
+		"Ajantasaistus 2 arkipäivän välein",
+		"1 projekti käynnissä kerrallaan",
+		"Slack/Teams + Trello + Zoom projektien seurantaan",
+		"Keskeytä milloin tahansa"
+	],
+	"description": [
+		"Kokenut frontend- ja WordPress-kehittäjä, joka on erikoistunut myös UX/UI ja graafiseen suunnitteluun aina kätesi ulottuvilla, kun sitä tarvitset.",
+		"50 tuntia ensiluokkaista suunnittelu- ja kehitystyötä, joka on räätälöity juuri sinun tarpeisiisi.",
+		"Tämä paketti sisältää Kevyt palvelun suunnittelutöiden lisäksi myös kattavat frontend- ja WordPress-kehityspalvelut.",
+		"Tarvitsitpa sitten responsiivisen nettisivun, houkuttelevan käyttöliittymän tai räätälöityjä WordPress-teemoja, olemma valmiina aina kun sitä tarvitset. Takaamme että nettisivusi ei ole vain visuaalisesti upeita vaan myös erittäin toimivia ja helposti hallittavia.",
+		"Sopii erityisesti pk ja suuryrityksille tai mainostoimistoille.",
+		"(1 paikka jäljellä tälle kuukaudelle)"
+	]
+}
